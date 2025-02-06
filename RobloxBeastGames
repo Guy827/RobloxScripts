@@ -1,0 +1,12 @@
+local Players = game:GetService("Players")
+
+while true do
+    for _, player in pairs(Players:GetPlayers()) do
+        if player.Character and player.Character:FindFirstChild("Humanoid") then
+            local humanoid = player.Character:FindFirstChild("Humanoid")
+            humanoid.JumpPower = 150
+            humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+        end
+    end
+    wait(3) -- Wait 3 seconds before jumping again
+end
